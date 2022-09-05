@@ -8,7 +8,6 @@
     <style>
         body{
              background-color:lightpink;
-             text-align :left ;
         }
     </style>
 </head>
@@ -25,10 +24,10 @@
                 $pass=$_POST['pwd'];
                 foreach($_SESSION['user'] as $key=>$value)
                 {
-                    if($email==$_SESSION['user'][$key]['email'] && $pass==$_SESSION['user'][$key]['password'])
+                    if($email==$value['email'] && $pass==$value['password'])
                     {
-                
                         header('location:listing.php');
+                        break;
                     }
                 }   
             }   

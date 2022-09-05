@@ -22,7 +22,7 @@
         $user=[];
         foreach($_SESSION['user'] as $key=>$value)
         {
-            if($id==$_SESSION['user'][$key]['id'])
+            if($id==$value['id'])
             {
                 $user=$_SESSION['user'][$key];
             }
@@ -40,7 +40,7 @@
         {
             foreach($_SESSION['user'] as $key=>$value)
             {
-                if($id==$_SESSION['user'][$key]['id'])
+                if($id==$value['id'])
                 {
                      $_SESSION['user'][$key]=$_POST;
                     $_SESSION['user'][$key]['id']=$id;

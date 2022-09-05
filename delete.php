@@ -1,13 +1,16 @@
 <?php
 session_start();
-global $id;
-$id=$_GET['id'];
-foreach($_SESSION['user'] as $key=>$value)
+if(isset($_GET['id']))
 {
-    if($id==$_SESSION['user'][$key]['id'])
+    global $id;
+    $id=$_GET['id'];
+    foreach($_SESSION['user'] as $key=>$value)
     {
-        unset($_SESSION['user'][$key]);
-        header('location:listing.php');
+        if($id==$value['id'])
+        {
+            unset($_SESSION['user'][$key]);
+            header('location:listing.php');
+        }
     }
 }
 ?>
